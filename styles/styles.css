@@ -1,0 +1,31 @@
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+.c_danger , .c_relief , .c_prim {
+    color: white !important;
+    padding: 2px 11px;
+    margin-right: 10px !important;
+    border-radius: 5px
+}
+
+.c_danger {
+     background: #f44336;
+}
+
+.c_relief {
+    background-color: #4CAF50;
+}
+
+.c_prim {
+   background-color: #607D8B; 
+}
+
+#main_card {
+    max-height: 23rem;
+    overflow-y: scroll;
+    height: 23rem;
+}
