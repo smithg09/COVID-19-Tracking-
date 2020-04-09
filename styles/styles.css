@@ -94,7 +94,7 @@ position: fixed;
     color: #021d44;
 }
 #target-content #target-inner h2 {
-  margin-top: 0;
+  margin-top: 10px;
 }
 #target-content #target-inner code {
   font-weight: bold;
