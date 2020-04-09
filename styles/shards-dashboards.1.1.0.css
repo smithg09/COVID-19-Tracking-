@@ -2146,7 +2146,8 @@ i.material-icons {
   background-color: #fff;
   border: none;
   border-radius: 0.625rem;
-  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1); }
+  /* box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);  */
+}
   .card > .list-group:first-child .list-group-item:first-child {
     border-top-left-radius: 0.625rem;
     border-top-right-radius: 0.625rem; }
@@ -2160,7 +2161,10 @@ i.material-icons {
   .card a:hover {
     text-decoration: none; }
   .card-small {
-    box-shadow: 0 2px 0 rgba(90, 97, 105, 0.11), 0 4px 8px rgba(90, 97, 105, 0.12), 0 10px 10px rgba(90, 97, 105, 0.06), 0 7px 70px rgba(90, 97, 105, 0.1); }
+    /* box-shadow: 0 2px 0 rgba(90, 97, 105, 0.11), 0 4px 8px rgba(90, 97, 105, 0.12), 0 10px 10px rgba(90, 97, 105, 0.06), 0 7px 70px rgba(90, 97, 105, 0.1);  */
+  border: 1px solid #dadce0;
+    border-radius: 8px;
+  }
     .card-small .card-header,
     .card-small .card-body,
     .card-small .card-footer {
@@ -4372,11 +4376,14 @@ a.text-accent:hover, a.text-accent:focus {
 
 .stats-small {
   min-height: 8.7rem;
-  overflow: hidden !important; }
+  overflow: hidden !important; 
+border: 1px solid #dadce0;
+    border-radius: 8px;}
   .stats-small canvas {
     position: absolute;
     bottom: 0; }
   .stats-small__data {
+    font-weight: bolder;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -4386,7 +4393,8 @@ a.text-accent:hover, a.text-accent:focus {
   .stats-small__label {
     font-size: 0.625rem;
     letter-spacing: 0.0625rem;
-    color: #818EA3; }
+    color: #3D5170;
+   }
   .stats-small__value {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 1.5rem;
