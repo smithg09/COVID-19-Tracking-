@@ -541,7 +541,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "x-rapidapi-key": "39aab58bacmsh45e95b51e2e09edp153d37jsn8653f04c899d"
             }
         }).then(response => { return response.json()}).then(response => {
-            console.log(response.affected_countries.length);
+            // console.log(response.affected_countries.length);
             document.getElementById("tac").innerText = response.affected_countries.length;
         }).catch(err => {
             console.log(err);
@@ -555,7 +555,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "x-rapidapi-key": "39aab58bacmsh45e95b51e2e09edp153d37jsn8653f04c899d"
             }
         }).then(response => { return response.json()}).then(response => {
-            console.log(response);
+            // console.log(response);
             document.getElementById("t_cases").innerText = response.total_cases;
             document.getElementById("t_deaths").innerText = response.total_deaths;
             document.getElementById("t_recovered").innerText = response.total_recovered;
@@ -566,7 +566,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     fetch("https://api.covid19india.org/data.json", {
             "method": "GET",
         }).then(response => { return response.json()}).then(response => {
-            console.log("INDIA",response);
+            // console.log("INDIA",response);
             document.getElementById("in_t_cases").innerText = response.statewise[0].confirmed;
             document.getElementById("in_t_deaths").innerText = response.statewise[0].deaths;
             document.getElementById("in_t_recovered").innerText = response.statewise[0].recovered;
@@ -575,7 +575,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             state_response = response.statewise;
             delete state_response[0];
             state_response.forEach(element => {
-              console.log(element.state)
+              // console.log(element.state)
                 document.getElementById('in_main_card').innerHTML += `<div class="card-body p-0 border-top">
                     <div class="blog-comments__item d-flex p-3">
                         <div class="blog-comments__content">
@@ -600,7 +600,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         fetch("https://newsapi.org/v2/top-headlines?country=in&apiKey=8900a00a70244f89abeeef6d0065b7b2", {
                     "method": "GET",
               }).then(response => { return response.json()}).then(response => {
-                    console.log("NEWS",response);
+                    // console.log("NEWS",response);
                     articles = response.articles;
                     articles.forEach( article => {
                       document.getElementById('news_content').innerHTML += `<div style="margin: 0px 0px 20px 0px;" jscontroller="d0DtYd" jsmodel="DLq0be hT8rr" jsaction="JIbuQc:h5M12e;rcuQ6b:npT2md;EM8Qed:.CLIENT" data-n-ham="true" data-n-cvid="i56" jsdata="tbf4if;ui|124+6d485864-3f07-4fee-9d09-db19debac101,ui|124+8e3b5b30-1a06-477f-a514-4b5530197cb6;58" jslog="88374" class="NiLAwe mi8Lec  gAl5If jVwmLb Oc0wGc R7GTQ keNKEd j7vNaf nID9nc">
