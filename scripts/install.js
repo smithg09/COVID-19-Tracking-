@@ -73,6 +73,7 @@
     // called once from app.component
     if ( checkStandalone()) {
         document.getElementById('install_btn').style.display = "none";
+        document.getElementById("new_feature").style.display = "none";
         return true;
       //  gas.emitEvent('A2HS', 'Standalone', '' , 0);
       }
