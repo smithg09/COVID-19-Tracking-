@@ -1,5 +1,5 @@
 {
-    "name": "Covid19 Tracker",
+    "name": "COVID19 Live",
     "short_name": "covid19",
     "start_url": "/index.html",
     "display": "standalone",

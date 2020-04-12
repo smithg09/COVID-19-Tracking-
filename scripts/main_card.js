@@ -9,7 +9,9 @@ $(document).ready(() => {
         }
     }).then(response => { return response.json() }).then(response => {
         var all_stat = response.countries_stat
-        console.log(all_stat)
+            var lu = getUpdatedTime();
+            document.getElementById("lastUpdated").innerHTML =
+              "Last Updated : " + lu;
         all_stat.forEach(countries => {
             if (countries.country_name === "") {
                 

@@ -66,6 +66,19 @@
       <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
       <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+      <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+      <meta name="apple-mobile-web-app-title" content="COVID-19 Live">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+      <link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
       <link rel="manifest" href="manifest.json">
       <meta name="msapplication-TileColor" content="#ffffff">
       <meta name="msapplication-TileImage" contentimages="images/ms-icon-144x144.png">
@@ -80,16 +93,17 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <link rel="stylesheet" href="./styles/news.css">
   </head>
-  <body class="h-100">
+  <body class="h-100" id="body">
    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6QNSJ3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <div class="container-fluid">
+<div id="snackbar"> </div>
+<div class="container-fluid">
       <div class="row">
         <!-- Main Sidebar -->
         <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
-          <div class="main-navbar border-bottom
+          <div class="main-navbar border-bottom">
             <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap p-0">
               <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
                 <div class="d-table m-auto">
@@ -106,18 +120,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link " href="https://covid19.smithgajjar.me">
-                  <i class="material-icons">vertical_split</i>
+                  <i class="material-icons">home</i>
                   <span>Home</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="https://smithgajjar.me">
-                  <i class="material-icons">person</i>
+                  <i class="material-icons">account_circle</i>
                   <span>About</span>
                 </a>
               </li>
               <li class="nav-item d-lg-none d-md-none">
-                <a class="nav-link " href="https://smithgajjar.me">
+                <a class="nav-link " href="#" onclick="addToHomeScreen()">
                   <i class="material-icons">person</i>
                   <span>Install this as an app  </span>
                 </a>
@@ -138,7 +152,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex" style="justify-content: center;align-items: center;">
                 <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 40px;margin: 10px;" src="images/icon-512.png" alt="Logo">
               </form>
+                 
               <ul class="navbar-nav border-left flex-row ">
+                  <li id="install_btn" >
+                    <a style="height: 100%;" onclick="addToHomeScreen()" class="nav-link nav-link-icon text-center" href="#">
+                      <div class="nav-link-icon__wrapper" style="height: 100%;display: flex;justify-content: center;align-items: center;">
+                        <i class="material-icons" id="shake_btn" style="color:rgb(46, 60, 82)">add_to_home_screen</i>
+                       </div>
+                    </a>
+                  </li>
                 <li class="nav-item border-right dropdown notifications">
                   <a style="height: 100%;" class="nav-link nav-link-icon text-center" href="#target-content">
                     <div class="nav-link-icon__wrapper" style="height: 100%;display: flex;justify-content: center;align-items: center;">
@@ -174,6 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </li>
                 
               </ul>
+                      
               <form action="#" class="main-navbar__search d-sm-flex d-md-none d-lg-none" style="justify-content: center;align-items: center;">
                 <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 40px;" src="images/icon-512.png" alt="Logo">
               </form>
@@ -190,24 +213,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="page-header row no-gutters" style="position: sticky;top: 60px;z-index: 999;background: white;">
               <div class="col-12 col-sm-12 text-center text-sm-left mb-0">
                 <a href="#"></a>
-                <span class="text-uppercase page-subtitle" style="line-height: 3rem;">COVID-19</span>
+                <div class="head_content">
+                  <span class="text-uppercase page-subtitle" id="cloud_off" style="line-height: 3rem;color:rgb(46, 60, 82);font-size: 14px;font-weight: 600;">
+                    <i class="material-icons" id="cloud_icon">cloud_queue</i>
+                    COVID-19
+                  </span>
+                  <div id="lastUpdated"></div>
+                </div>
 <ul class="nav nav-tabs">
     <li class="active">
         <a data-toggle="tab" href="#home" style="text-decoration: none ;">India</a>
     </li>
     <li>
-        <a data-toggle="tab" href="#menu1" style="text-decoration: none ;">World Wide Stats</a>
+        <a data-toggle="tab" href="#menu1" style="text-decoration: none ;">Worldwide</a>
     </li>
     <li>
         <a data-toggle="tab" href="#news" style="text-decoration: none ;">News</a>
     </li>
 </ul>
-
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </div>
 </div>
 
-<div class="tab-content pt-4">
+<div class="tab-content">
+  
+<div class="new_feature" id="new_feature" onclick="toggle_collapse()">
+  
+        <a href="#" id="collapse_feature">&times;</a>
+    <div class="small_back">
+        New Update
+    </div>
+    <div class="message">
+<lottie-player class="lottie_size" src='https://assets7.lottiefiles.com/packages/lf20_wv4mTG.json' background='transparent' speed='1' style='width: 150px; height: 150px;' loop="loop" autoplay="autoplay"></lottie-player>
+
+      <div class="text">
+        <p> You can now Install this webpage as a native app in your device. Try any options listed below  :</p>
+        <ul id="instruc">
+          <li>
+            Navigate to your browser's menu <span class="material-icons" style="font-size: 16px;transform: translateY(2px);"> more_vert </span>and click on " Add to Homescreen " option .
+          </li>
+          <li>
+            Click on the device icon <span class="material-icons" style="font-size: 16px;transform: translateY(2px);">add_to_home_screen</span>on top Navigation bar.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
     <div id="home" class="tab-pane fade-in active">
         <!-- <h3></h3> -->
 <!-- End Page Header -->
@@ -521,6 +575,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </main>
       </div>
     </div>
+
     <!-- <a class="info" href="#target-content"> <img src="./images/icons8-info-64.png" alt="info"></a> -->
     <div id="target-content" id="close">
         <a href="#" class="close" id="close"></a>
@@ -552,6 +607,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "x-rapidapi-key": "39aab58bacmsh45e95b51e2e09edp153d37jsn8653f04c899d"
             }
         }).then(response => { return response.json()}).then(response => {
+            var lu = getUpdatedTime();
+            document.getElementById("lastUpdated").innerHTML = "Last Updated : " + lu;
             // console.log(response.affected_countries.length);
             document.getElementById("tac").innerText = response.affected_countries.length;
             
@@ -568,6 +625,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
         }).then(response => { return response.json()}).then(response => {
             // console.log(response);
+            
+            var lu = getUpdatedTime();
+            document.getElementById("lastUpdated").innerHTML = "Last Updated : " + lu;
             document.getElementById("t_cases").innerText = response.total_cases;
             document.getElementById("t_deaths").innerText = response.total_deaths;
             document.getElementById("t_recovered").innerText = response.total_recovered;
@@ -580,6 +640,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             "method": "GET",
         }).then(response => { return response.json()}).then(response => {
             // console.log("INDIA",response);
+            
+            var lu = getUpdatedTime();
+            document.getElementById("lastUpdated").innerHTML = "Last Updated : " + lu;
             document.getElementById("in_t_cases").innerText = response.statewise[0].confirmed;
             document.getElementById("in_t_deaths").innerText = response.statewise[0].deaths;
             document.getElementById("in_t_recovered").innerText = response.statewise[0].recovered;
@@ -613,7 +676,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         fetch("https://newsapi.org/v2/top-headlines?country=in&apiKey=8900a00a70244f89abeeef6d0065b7b2", {
                     "method": "GET",
               }).then(response => { return response.json()}).then(response => {
-                    // console.log("NEWS",response);
+                    
+            var lu = getUpdatedTime();
+            document.getElementById("lastUpdated").innerHTML = "Last Updated : " + lu;
                     articles = response.articles;
                     articles.forEach( article => {
                       document.getElementById('news_content').innerHTML += `<div style="margin: 0px 0px 20px 0px;" jscontroller="d0DtYd" jsmodel="DLq0be hT8rr" jsaction="JIbuQc:h5M12e;rcuQ6b:npT2md;EM8Qed:.CLIENT" data-n-ham="true" data-n-cvid="i56" jsdata="tbf4if;ui|124+6d485864-3f07-4fee-9d09-db19debac101,ui|124+8e3b5b30-1a06-477f-a514-4b5530197cb6;58" jslog="88374" class="NiLAwe mi8Lec  gAl5If jVwmLb Oc0wGc R7GTQ keNKEd j7vNaf nID9nc">
@@ -630,10 +695,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                           <p class="wEwyrc AVN2gc uQIVzc Sksgp">${article.description}</p>
                                       </div>
                                   </div>
-                                  <div class="QmrVtf RD0gLb">
-                                      <a style="padding: 10px 0px;" href="${article.url}" class="wEwyrc AVN2gc uQIVzc">view source website</a>
+                                  </article>
+                                  <div class="QmrVtf RD0gLb" style="padding: 0px 16px;">
+                                      <p class="wEwyrc AVN2gc uQIVzc Sksgp">${article.source.name}</p>
+                                      <a style="padding: 10px 8px;font-size: 13px" href="${article.url}" class="wEwyrc AVN2gc uQIVzc">view source website</a>
                                   </div>
-                              </article>
                           </div>
                       </div>`
                     })
@@ -649,12 +715,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-    <!-- <script src="scripts/extras.1.1.0.min.js"></script> -->
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
     <script src="scripts/app/app-blog-overview.1.1.0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="./scripts/app.js"></script>
+    <script src="./scripts/install.js"></script>
     <script src="./serviceworker.js"></script>
 
   </body>
