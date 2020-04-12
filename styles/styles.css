@@ -83,7 +83,7 @@
     margin: 15px 0px;
     padding: 10px 10px;
     overflow: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
    transition: all .5s linear;
    -moz-transition: all 0.5s linear; /* Firefox 4 */
     -webkit-transition: all 0.5s linear; /* Safari and Chrome */
