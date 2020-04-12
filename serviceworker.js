@@ -5,6 +5,7 @@ const assets = [
   "/index.html",
   "/manifest.json",
   "/scripts/app.js",
+  "/scripts/install.js",
   "/scripts/main_card.js",
   "/scripts/shards-dashboards.1.1.0.min.js",
   "/scripts/app/app-components-overview.1.1.0.js",
