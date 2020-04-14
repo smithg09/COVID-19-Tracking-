@@ -56,7 +56,7 @@ self.addEventListener('activate', evt => {
             // console.log(key)
             return Promise.all(
               keys.map((key) => {
-                if (key !== staticName && key !== dynamicCache) {
+                if (key !== staticName) {
                   return caches.delete(key);
                 }
               })
