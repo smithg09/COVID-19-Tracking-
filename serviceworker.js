@@ -50,13 +50,17 @@ self.addEventListener('install', evt => {
 
 // Activate
 self.addEventListener('activate', evt => {
-    // console.log("SW Active")
+    console.log("SW Active")
     evt.waitUntil(
         caches.keys().then(keys => {
-            return Promise.all(keys
-                .filter(key => key !== staticName && key !== dynamicCache)
-                .map(key => caches.delete(key))
-            )
+            console.log(key)
+            return Promise.all(
+              keyList.map((key) => {
+                if (key !== cacheName) {
+                  return caches.delete(key);
+                }
+              })
+            );
         })
     );
 });
