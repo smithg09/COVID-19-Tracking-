@@ -53,7 +53,7 @@ self.addEventListener('activate', evt => {
     console.log("SW Active")
     evt.waitUntil(
         caches.keys().then(keys => {
-            console.log(key)
+            // console.log(key)
             return Promise.all(
               keys.map((key) => {
                 if (key !== staticName && key !== dynamicCache) {
