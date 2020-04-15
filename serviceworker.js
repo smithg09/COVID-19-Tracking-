@@ -22,8 +22,6 @@ const assets = [
   "https://use.fontawesome.com/releases/v5.0.6/css/all.css",
   "https://fonts.googleapis.com/icon?family=Material+Icons",
   "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
-  "https://newsapi.org/v2/top-headlines?country=in&apiKey=8900a00a70244f89abeeef6d0065b7b2",
-//   "https://api.covid19india.org/data.json",
   "https://code.jquery.com/jquery-3.3.1.min.js",
   "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
 ];
