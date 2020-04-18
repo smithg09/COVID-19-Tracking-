@@ -2,6 +2,7 @@ const staticName = 'site-data-v3';
 const dynamicCache = 'site-dynamic-v4';
 const assets = [
   "/",
+//   "/#",
   "/index.html",
   "/manifest.json",
   "/scripts/app.js",
@@ -18,6 +19,7 @@ const assets = [
   "/images/corona.png",
   "images/icon-512.png",
   "/fallback.html",
+  "/serviceworker.js",
   "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900",
   "https://use.fontawesome.com/releases/v5.0.6/css/all.css",
   "https://fonts.googleapis.com/icon?family=Material+Icons",
@@ -67,18 +69,25 @@ self.addEventListener('activate', evt => {
 self.addEventListener('fetch', evt => {
     // console.log("fetch events",evt)
     evt.respondWith(
-        caches.match(evt.request).then(cacheRes => {
-            return cacheRes || fetch(evt.request).then(fetchRes => {
-                return caches.open(dynamicCache).then(cache => {
-                    cache.put(evt.request.url, fetchRes.clone());
-                    limitCacheSize(dynamicCache , 20)
-                    return fetchRes;
-                })
-            });
-        }).catch(() => {
-            if (evt.request.url.indexOf('.html') > -1) {
-                return caches.match('/fallback.html');
-            }
-        })
+      fetch(evt.request).catch(function () {
+         return caches.match(evt.request).catch(() => {
+             if (evt.request.url.indexOf('html') > -1) {
+                    return caches.match('/fallback.html');
+                }
+         });
+      })
+      // caches.match(evt.request).then(cacheRes => {
+      //     return cacheRes || fetch(evt.request).then(fetchRes => {
+      //         return caches.open(dynamicCache).then(cache => {
+      //             cache.put(evt.request.url, fetchRes.clone());
+      //             limitCacheSize(dynamicCache , 20)
+      //             return fetchRes;
+      //         })
+      //     });
+      // }).catch(() => {
+      //     if (evt.request.url.indexOf('.html') > -1) {
+      //         return caches.match('/fallback.html');
+      //     }
+      // })
     );
 })
