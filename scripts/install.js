@@ -155,7 +155,10 @@ if (!trackStandalone()) {
 
     $(document).ready(() => {
       if (is_IOS) {
-          document.getElementById("ios_disabled").style.display = "none";
+        document.getElementById("install_btn").style.display = "none";
+        ios_disabled
+        document.getElementById("ios_disabled").style.display = "none";
+        
             var elem = document.getElementById("instruc");
           elem.innerHTML = `
             <li>Click share button
