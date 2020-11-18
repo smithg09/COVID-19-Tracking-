@@ -1,17 +1,10 @@
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <h3 align="center">COVID19-Tracking</h3>
-  <p align="center">
-    This project lets to track the spread of COVID19 in india and around the World. 
-    This is a Progressive WebApp you can install it on any device by add it to your device home screen. 
-    <br />
-    <br />
-    <a href="https://github.com/smithg09/COVID-19-Tracking-/issues/new?assignees=&labels=&template=bug_report.md&title=">🐞 Bug Report</a> &nbsp;&nbsp;
-    <a href="https://github.com/smithg09/COVID-19-Tracking-/issues/new?assignees=&labels=&template=feature_request.md&title=">📢 Feature Request</a>
-    <br />
-  </p>
-<p align="center">
+# COVID19-Tracking
+#### This project lets to track the spread of COVID19 in india and around the World. This is a Progressive WebApp you can install it on any device by add it to your device home screen. 
+<p>
+  <a href="https://github.com/smithg09/COVID-19-Tracking-/issues/new?assignees=&labels=&template=bug_report.md&title=">🐞 Bug Report</a> &nbsp;&nbsp;
+  <a href="https://github.com/smithg09/COVID-19-Tracking-/issues/new?assignees=&labels=&template=feature_request.md&title=">📢 Feature Request</a>
+</p>
+<p>
 <a href="https://github.com/smithg09/COVID-19-Tracking-/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="LICENSE">
 </a>
